@@ -63,4 +63,6 @@ Users can add a spotify playlist to their profile that plays song previews.
 Admins can delete posts, comments, and profile’s directly from the webpage. 
 
 ## ERD
-
+<br>
+<img src="./images/image1" style="background-color: #FFFFFF;">
+<br>
