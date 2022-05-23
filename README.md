@@ -64,5 +64,5 @@ Admins can delete posts, comments, and profile’s directly from the webpage.
 
 ## ERD
 <br>
-<img src="./imgs/image1.jpg" style="background-color: #FFFFFF;">
+<img src="./imgs/image1.png" style="background-color: #FFFFFF;">
 <br>
