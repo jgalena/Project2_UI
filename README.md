@@ -69,10 +69,10 @@ Admins can delete posts, comments, and profile’s directly from the webpage.
 
 ## Application Flow
 <br>
-<img src="./imgs/image2.png" style="background-color: #000000;">
+<img src="./imgs/image1.png" style="background-color: #000000;">
 <br>
 
 ## HTML Pages
 <br>
-<img src="./imgs/image1.png" style="background-color: #000000;">
+<img src="./imgs/image2.png" style="background-color: #000000;">
 <br>
