@@ -64,7 +64,7 @@ Admins can delete posts, comments, and profile’s directly from the webpage.
 
 ## ERD
 <br>
-<img src="./imgs/image1.png" style="background-color: #000000;">
+<img src="./imgs/image3.png" style="background-color: #000000;">
 <br>
 
 ## Application Flow
@@ -74,5 +74,5 @@ Admins can delete posts, comments, and profile’s directly from the webpage.
 
 ## HTML Pages
 <br>
-<img src="./imgs/image3.png" style="background-color: #000000;">
+<img src="./imgs/image1.png" style="background-color: #000000;">
 <br>
