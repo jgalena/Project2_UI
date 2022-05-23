@@ -66,3 +66,7 @@ Admins can delete posts, comments, and profile’s directly from the webpage.
 <br>
 <img src="./imgs/image1.png" style="background-color: #000000;">
 <br>
+
+<br>
+![](./imgs/image2.png)
+<br>
