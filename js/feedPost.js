@@ -1,16 +1,16 @@
-async function addUser(user){
-    console.log(`adding user to api: ${JSON.stringify(user)}`);
+async function getPosts(PostBody){
+    console.log(`adding PostBody to api: ${JSON.stringify(PostBody)}`);
     //do fetch request here
     try {
         const raw_response = await fetch(
-          `http://localhost:8080/api/user`,
+          `http://localhost:8080/api/posts`,
           {
-              method: 'POST',
+              method: 'GET',
               headers: {
                   "Content-Type": "application/json",
                   "Access-Control-Allow-Origin": "*"
               },
-              body: JSON.stringify(user)
+              body: JSON.stringify(PostBody)
           }
         ); //returns a Promise
     
@@ -32,32 +32,28 @@ async function addUser(user){
 }
 
 
-function addUserHelper(){
+function getPostsHelper(){
     /**
      * This function acts as an intermediary between 
-     *      the html user input and the addUser function.
+     *      the html PostBody input and the addUser function.
      *      It takes the input and combines it into a 
      *      single object that can be passed to the addUser function.
      */
 
     // Selecting the input elements and their values from html page
-    var Firstname = document.getElementById("f_name").value;
-    var Lastname = document.getElementById("l_name").value;
-    var Username = document.getElementById("username").value;
-    var Password = document.getElementById("password").value;
+    var postBody = document.getElementById("post_body").value;
+
 
     // combine inputs into single object
-    const user = {
-        f_name: Firstname, 
-        l_name: Lastname,
-        username: Username, 
-        password: Password
+    const PostBody = {
+        post_body: postBody, 
+
     };
 
     // test print to console
-    console.log("Should show all user inputs -->", user);
+    console.log("Should show all posts -->", post_body);
 
     // pass input object into addUser
-    addUser(user)
+    getPosts(post_body)
 
 }
