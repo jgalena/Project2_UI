@@ -1,3 +1,5 @@
+
+
 async function makePost(post){
     console.log(`adding post to api: ${JSON.stringify(post)}`);
     //do fetch request here
@@ -23,12 +25,18 @@ async function makePost(post){
     
         console.log(json_data);
 
+        // getPosts()
+
         return json_data;
+
       } catch (error) {
         //this catch block is for network errors
         console.log(error);
         return null;
       }
+
+
+      
 }
 
 
