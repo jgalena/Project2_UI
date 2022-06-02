@@ -4,11 +4,11 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>Login - Team Alchemy</title>
-    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,700,700i,600,600i&amp;display=swap">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.11.1/baguetteBox.min.css">
-    <link rel="stylesheet" href="assets/css/vanilla-zoom.min.css">
+    <title>Register - Team Alchemy</title>
+
+    <!-- for working with registration.js -->
+    <script type="text/javascript" src="../js/login.js"></script>
+
 </head>
 
 <body>
@@ -24,30 +24,46 @@
             </div>
         </div>
     </nav>
-    <main class="page login-page">
+    <main class="page registration-page">
         <section class="clean-block clean-form dark">
             <div class="container">
                 <div class="block-heading">
-                    <h2 class="text-info" style="--bs-info-rgb: 29,185,84;">Log In</h2>
+                    <h2 class="text-info" style="/*border-color: #1DB954;*//*--bs-primary-rgb: 29,185,84;*//*--bs-secondary-rgb: 29,185,84;*//*--bs-success-rgb: 29,185,84;*/--bs-info-rgb: 29,185,84;/*--bs-warning-rgb: 29,185,84;*//*--bs-danger-rgb: 29,185,84;*//*--bs-light-rgb: 29,185,84;*//*--bs-dark: #1DB954;*/">User Registration</h2>
                 </div>
-                <form style="border-top: 2px solid #1DB954;">
-                    <div class="mb-3"><label class="form-label" for="email">Username</label><input class="form-control item" type="email" id="email"></div>
-                    <div class="mb-3"><label class="form-label" for="password">Password</label><input class="form-control" type="password" id="password"></div><button class="btn btn-primary" type="submit" style="background-color: #1DB954;border-color: #268146;">Log In</button>
-                </form>
-            </div>
-        </section>
-    </main>
-    <div style="position: fixed;left: 0px;bottom: 0px;/*height: 30px;*/width: 100%;">
-        <footer class="page-footer dark">
-            <div class="footer-copyright">
-                <p>© 2022 Copyright Team Alchemy</p>
-            </div>
-        </footer>
-    </div>
-    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.11.1/baguetteBox.min.js"></script>
-    <script src="assets/js/vanilla-zoom.js"></script>
-    <script src="assets/js/theme.js"></script>
-</body>
 
+                <form method="GET" class="login-form" id="login-form" style="border-top: 2px solid #1DB954;">
+
+                    <!-- get username -->
+                    <div class="mb-3">
+                        <input type="text" placeholder="Enter your username..." id="username" class="mt-3" >
+                    </div>
+                
+                    <!-- get password -->
+                    <div class="mb-3">
+                        <input type="text" placeholder="Enter your password..." id="password" class="mt-3" >
+                    </div>
+
+                  
+
+                    <!-- Register Button -->
+                    <button type="button" onclick="validate();">Login</button>
+                    
+                </form>
+
+
+
+
+                </div>
+            </section>
+        </main>
+        <div style="position: fixed;left: 0px;bottom: 0px;/*height: 30px;*/width: 100%;">
+            <footer class="page-footer dark">
+                <div class="footer-copyright">
+                    <p>© 2022 Copyright Team Alchemy</p>
+                </div>
+            </footer>
+            
+        </div>
+    </body>
 </html>
+
