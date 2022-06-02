@@ -220,8 +220,9 @@ async function displayFavs(favs) {
 
 async function main(){
 
-    let user = sessionStorage.getItem('currentUser');
-
+    let user = JSON.parse(sessionStorage.getItem('currentUser'));
+    console.log("current user");
+    console.log(user);
     const favorites = await getFavoriteSongs(user.user_id);
     const artist_URL = await searchArtistSpotify(user.favorite_artist);
     document.getElementById("username").innerHTML = user.username;
