@@ -238,6 +238,7 @@ async function addSongHelper(){
     }
     console.log(favoriteSong);
     addFavSong(favoriteSong);
+    window.location.reload();
 
 
 }
