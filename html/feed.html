@@ -11,6 +11,7 @@
 
     <!-- for working with registration.js -->
     <script type="text/javascript" src="../js/feed.js"></script>
+    <script type="text/javascript" src="../js/makePost.js"></script>
 
     <link rel="stylesheet" href="/css/feed.css">
 
@@ -21,7 +22,7 @@
         <div class="container"><a class="navbar-brand logo" href="#">Team Alchemy</a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-1"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse" id="navcol-1">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="registration.html">Registration</a></li>
+                    <li class="nav-item"><a class="nav-link" href="userRegistration.html">Registration</a></li>
                     <li class="nav-item"><a class="nav-link" href="login.html">Login</a></li>
                     <li class="nav-item"><a class="nav-link active" href="feed.html">Feed</a></li>
                     <li class="nav-item"><a class="nav-link" href="index.html">Profile</a></li>
@@ -36,25 +37,27 @@
             </h1>
         </div>
 
+            <!-- make a post -->
+            <section class="makePost">
+                <form method="POST" class="makeNewPost" id="makeNewPost">
+                    <div class="postBox">
+                        <textarea id="postBox" name="postBox"></textarea>
+                    </div>
+
+                    <!-- Register Button -->
+                    <div 
+                        class="makePostButton">
+                        <button type="button" onclick="makePostHelper();">Create Post</button>
+                    </div>
+                </form>
+            </section>
 
             <!-- need all posts displayed here -->
-            <section class="posts">
-                <div class="postBox">
-                    <textarea id="postBox" name="postBox"></textarea>
-                </div>
-                <div>
+            <section id="posts" class="posts">
 
-                <!-- back button -->
-                <!-- <div 
-                    class="backbutton">
-                    <input type="button" value="back" onclick="history.back()">
-                </div> -->
 
                 <!-- add comment button -->
-                <div 
-                    class="comments">
-                    <button>Create Post</button>
-                </div>
+
 
             </div>
 

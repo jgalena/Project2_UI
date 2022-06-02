@@ -57,6 +57,5 @@ function displayPosts(posts) {
   }
 }
 
-
 getPosts()
 
