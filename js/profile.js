@@ -19,7 +19,7 @@ async function getUser(id){
   
       const json_data = await raw_response.json();
   
-      //sconsole.log(json_data);
+      console.log(json_data);
       let userTemplate = {
           user_id: json_data.user_id,
           f_name: json_data.f_name,
@@ -219,12 +219,10 @@ async function displayFavs(favs) {
 
 
 async function main(){
-    //sessionStorage.setItem('loggedIn',1);
-    //let id = sessionStorage.getItem('loggedIn');
-    
-    //const user = await getUser(id);
+
     let user = sessionStorage.getItem('currentUser');
-    const favorites = await getFavoriteSongs(user.id);
+
+    const favorites = await getFavoriteSongs(user.user_id);
     const artist_URL = await searchArtistSpotify(user.favorite_artist);
     document.getElementById("username").innerHTML = user.username;
     document.getElementById("name").innerHTML =  user.f_name + " " + user.l_name ;
