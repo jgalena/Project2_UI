@@ -55,7 +55,7 @@ function displayPosts(posts) {
     var postBody = document.createElement("p");
     postBody.innerHTML = posts[i].post_body;
     postDiv.append(postBody);
-    parentSection.append(postDiv);
+    parentSection.prepend(postDiv);
   }
 }
 
