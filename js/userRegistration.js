@@ -63,32 +63,3 @@ function addUserHelper(){
     addUser(user)
 
 }
-
-
-//get all users
-async function getPosts(){
-  try{
-    const raw_response = await fetch(
-      `http://localhost:8080/api/posts`
-    );
-
-    if (!raw_response.ok) {
-      throw new Error(raw_response.status);
-    }
-
-    const json_data = await raw_response.json();
-    console.log(json_data[0].user_id);
-    console.log(json_data);
-
-
-  }catch(error){
-    console.log(error);
-    return null;
-  }
-
-
-
-}
-
-getPosts()
-
