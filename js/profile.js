@@ -219,10 +219,12 @@ async function displayFavs(favs) {
 
 
 async function main(){
-    sessionStorage.setItem('loggedIn',1);
-    let id = sessionStorage.getItem('loggedIn');
-    const favorites = await getFavoriteSongs(id);
-    const user = await getUser(id);
+    //sessionStorage.setItem('loggedIn',1);
+    //let id = sessionStorage.getItem('loggedIn');
+    
+    //const user = await getUser(id);
+    let user = sessionStorage.getItem('currentUser');
+    const favorites = await getFavoriteSongs(user.id);
     const artist_URL = await searchArtistSpotify(user.favorite_artist);
     document.getElementById("username").innerHTML = user.username;
     document.getElementById("name").innerHTML =  user.f_name + " " + user.l_name ;
