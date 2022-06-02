@@ -69,7 +69,7 @@ function addUserHelper(){
 async function getPosts(){
   try{
     const raw_response = await fetch(
-      `http://localhost:8080/api/users`
+      `http://localhost:8080/api/posts`
     );
 
     if (!raw_response.ok) {
