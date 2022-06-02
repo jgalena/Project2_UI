@@ -221,8 +221,6 @@ async function displayFavs(favs) {
 async function main(){
 
     let user = JSON.parse(sessionStorage.getItem('currentUser'));
-    console.log("current user");
-    console.log(user);
     const favorites = await getFavoriteSongs(user.user_id);
     const artist_URL = await searchArtistSpotify(user.favorite_artist);
     document.getElementById("username").innerHTML = user.username;
@@ -235,12 +233,11 @@ async function main(){
 
 async function addSongHelper(){
     let songName = document.getElementById("song_name").value;
+    let user = JSON.parse(sessionStorage.getItem('currentUser'));
     const song = await searchSongSpotify(songName);
     let favoriteSong = {
         spotifyId: song.url,
-        user: {
-            user_id: 1
-        }
+        user: user
     }
     console.log(favoriteSong);
     addFavSong(favoriteSong);
