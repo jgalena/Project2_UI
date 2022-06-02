@@ -10,7 +10,9 @@
 
 
     <!-- for working with registration.js -->
-    <script type="text/javascript" src="../js/feedPost.js"></script>
+    <script type="text/javascript" src="../js/feed.js"></script>
+
+    <link rel="stylesheet" href="/css/feed.css">
 
 </head>
 
@@ -37,8 +39,24 @@
 
             <!-- need all posts displayed here -->
             <section class="posts">
+                <div class="postBox">
+                    <textarea id="postBox" name="postBox"></textarea>
+                </div>
+                <div>
 
+                <!-- back button -->
+                <!-- <div 
+                    class="backbutton">
+                    <input type="button" value="back" onclick="history.back()">
+                </div> -->
 
+                <!-- add comment button -->
+                <div 
+                    class="comments">
+                    <button>Create Post</button>
+                </div>
+
+            </div>
 
             </section>
 
