@@ -1,13 +1,13 @@
-async function getPosts(){
-  try{
+async function getPosts() {
+  try {
     const raw_response = await fetch(
       `http://localhost:8080/api/posts`,
       {
-      method:"GET",
-      headers:{
-                  "Content-Type": "application/json",
-                  "Access-Control-Allow-Origin": "*"
-              }
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+          "Access-Control-Allow-Origin": "*"
+        }
       }
     );
 
@@ -35,7 +35,7 @@ async function getPosts(){
     console.log(typeof json_data);
     displayPosts(json_data);
 
-  }catch(error){
+  } catch (error) {
     console.log(error);
     return null;
   }
@@ -46,17 +46,23 @@ function displayPosts(posts) {
   console.log(`(displayPosts) POST ID: ${posts[0].post_id}`);
 
   for (let i = 0; i < posts.length; i++) {
-    //console.log(posts[i].post_id);
-    //console.log(posts[i].post_body);
-
     var postDiv = document.createElement("div");
+
+    var postUser = document.createElement("h3");
+    postUser.innerHTML = posts[i].user ? posts[i].user.username : `User is unknown`;
+    postDiv.append(postUser);
+
     var postBody = document.createElement("p");
     postBody.innerHTML = posts[i].post_body;
     postDiv.append(postBody);
-    parentSection.append(postDiv);
+
+    var songEmbed = document.createElement("p");
+    songEmbed.innerHTML = "<iframe style=\"border-radius:12px\" src=\"https://open.spotify.com/embed/track/" + posts[i].post_song + "?utm_source=generator\" width=\"60%\" height=\"80\" frameBorder=\"0\" allowfullscreen=\"\" allow=\"autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture\"></iframe>";
+    postDiv.append(songEmbed);
+
+    parentSection.prepend(postDiv);
   }
 }
 
 
 getPosts()
-
