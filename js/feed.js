@@ -30,7 +30,7 @@ async function getPosts() {
     // console.log("song: ", song);
 
     console.log(`POST ID: ${json_data[0].post_id}`);
-    console.log(json_data);
+    //console.log(json_data);
 
     console.log(typeof json_data);
     displayPosts(json_data);
@@ -41,9 +41,36 @@ async function getPosts() {
   }
 }
 
-function displayPosts(posts) {
+async function getComments() {
+  try {
+    const raw_response = await fetch(
+      `http://localhost:8080/api/comments`,
+      {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+          "Access-Control-Allow-Origin": "*"
+        }
+      }
+    );
+
+    if (!raw_response.ok) {
+      throw new Error(raw_response.status);
+    }
+
+    const json_data = await raw_response.json();
+
+    return json_data;
+
+  } catch (error) {
+    console.log(error);
+    return null;
+  }
+}
+
+async function displayPosts(posts) {
   var parentSection = document.getElementById("posts");
-  console.log(`(displayPosts) POST ID: ${posts[0].post_id}`);
+  var comments = await getComments();
 
   for (let i = 0; i < posts.length; i++) {
     var postDiv = document.createElement("div");
@@ -57,8 +84,24 @@ function displayPosts(posts) {
     postDiv.append(postBody);
 
     var songEmbed = document.createElement("p");
-    songEmbed.innerHTML = "<iframe style=\"border-radius:12px\" src=\"https://open.spotify.com/embed/track/" + posts[i].post_song + "?utm_source=generator\" width=\"60%\" height=\"80\" frameBorder=\"0\" allowfullscreen=\"\" allow=\"autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture\"></iframe>";
+    songEmbed.innerHTML = "<iframe style=\"border-radius:12px\" src=\"https://open.spotify.com/embed/track/" + posts[i].post_song + "?utm_source=generator\" width=\"60%\" height=\"80\" frameBorder=\"0\" allow=\"autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture\"></iframe>";
     postDiv.append(songEmbed);
+
+    var commentBox = document.createElement("textarea");
+    var createCommentDiv = document.createElement("div");
+    var submitComment = document.createElement("button");
+    submitComment.innerHTML = "Comment";
+    createCommentDiv.append(commentBox);
+    createCommentDiv.append(submitComment);
+    postDiv.append(createCommentDiv);
+
+    for (let j = 0; j < comments.length; j++) {
+      if (posts[i].post_id == comments[j].post.post_id) {
+        var commentDiv = document.createElement("div");
+        commentDiv.innerHTML = comments[j].comment_body;
+        postDiv.append(commentDiv);
+      }
+    }
 
     parentSection.prepend(postDiv);
   }
