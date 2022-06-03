@@ -57,7 +57,7 @@ function displayPosts(posts) {
     postDiv.append(postBody);
 
     var songEmbed = document.createElement("p");
-    songEmbed.innerHTML = "<iframe style=\"border-radius:12px\" src=\"https://open.spotify.com/embed/track/" + posts[i].post_song + "?utm_source=generator\" width=\"60%\" height=\"80\" frameBorder=\"0\" allowfullscreen=\"\" allow=\"autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture\"></iframe>";
+    songEmbed.innerHTML = "<iframe style=\"border-radius:12px\" src=\"https://open.spotify.com/embed/track/" + posts[i].post_song + "?utm_source=generator\" width=\"60%\" height=\"80\" frameBorder=\"0\" allow=\"autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture\"></iframe>";
     postDiv.append(songEmbed);
 
     parentSection.prepend(postDiv);

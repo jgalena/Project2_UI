@@ -36,19 +36,19 @@ async function addSongToPost(){
 
   // gets post body from input on post
   let postBody = document.getElementById("postBox").value;
-  console.log(postBody);
+  // console.log(postBody);
 
   // gets song name from input on post
   let songName = document.getElementById("postSong").value;
-  console.log(songName);
+  // console.log(songName);
 
   // get current user info
   let user = JSON.parse(sessionStorage.getItem('currentUser'));
-  console.log(user);
+  // console.log(user);
 
   // search spotify for song and get url
   let songURL = await searchSongSpotify(songName);
-  console.log(songURL);
+  // console.log(songURL);
 
   // combine inputs into single object
   const post = {
