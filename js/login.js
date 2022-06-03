@@ -43,7 +43,7 @@ async function validate() {
 
         alert("Login successfully");
 
-        window.location = "feed.html"; // Redirecting to other page.
+        window.location = "html/feed.html"; // Redirecting to other page.
         return false;
     }
     else {
@@ -57,6 +57,4 @@ async function validate() {
             return false;
         }
     }
-    
-
 }
