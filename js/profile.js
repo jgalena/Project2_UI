@@ -19,7 +19,7 @@ async function getUser(id){
   
       const json_data = await raw_response.json();
   
-      //sconsole.log(json_data);
+      console.log(json_data);
       let userTemplate = {
           user_id: json_data.user_id,
           f_name: json_data.f_name,
@@ -207,7 +207,10 @@ async function displayFavs(favs) {
       var postBody = document.createElement("p");
       //const song = await getSongSpotify(favs[i].spotifyId);
       //postBody.innerHTML = song.name + " by " + song.artist + " From the album " + song.album;
-      postBody.innerHTML = "<iframe style=\"border-radius:12px\" src=\"https://open.spotify.com/embed/track/" + favs[i].spotifyId + "?utm_source=generator\" width=\"60%\" height=\"80\" frameBorder=\"0\" allowfullscreen=\"\" allow=\"autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture\"></iframe>"
+      postBody.innerHTML = "<iframe style=\"border-radius:12px\" src=\"https://open.spotify.com/embed/track/" 
+      + favs[i].spotifyId 
+      + "?utm_source=generator\" width=\"60%\" height=\"80\" frameBorder=\"0\" allowfullscreen=\"\" allow=\"autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture\"></iframe>"
+      + "<button type = \"button\" onclick=\"deleteSongHelper('" + favs[i].id + "');\">X</button>";
       console.log(favs[i]);
       postDiv.append(postBody);
       parentSection.append(postDiv);
@@ -216,8 +219,9 @@ async function displayFavs(favs) {
 
 
 async function main(){
-    const favorites = await getFavoriteSongs(1);
-    const user = await getUser(1);
+
+    let user = JSON.parse(sessionStorage.getItem('currentUser'));
+    const favorites = await getFavoriteSongs(user.user_id);
     const artist_URL = await searchArtistSpotify(user.favorite_artist);
     document.getElementById("username").innerHTML = user.username;
     document.getElementById("name").innerHTML =  user.f_name + " " + user.l_name ;
@@ -229,17 +233,51 @@ async function main(){
 
 async function addSongHelper(){
     let songName = document.getElementById("song_name").value;
+    let user = JSON.parse(sessionStorage.getItem('currentUser'));
     const song = await searchSongSpotify(songName);
     let favoriteSong = {
         spotifyId: song.url,
-        user: {
-            user_id: 1
-        }
+        user: user
     }
     console.log(favoriteSong);
     addFavSong(favoriteSong);
+    window.location.reload();
 
 
+}
+
+async function deleteSongHelper(input){
+  let song = {
+    id: input
+  }
+  deleteSong(song);
+  window.location.reload();
+}
+
+async function deleteSong(id){
+  console.log(id);
+  try{
+    const raw_response = await fetch(
+      `http://localhost:8080/api/favoritesong`,
+      {
+        method: 'DELETE',
+        headers: {
+          "Content-Type": "application/json",
+          "Access-Control-Allow-Origin": "*"
+      },
+      body: JSON.stringify(id)
+      }
+    )
+    if (!raw_response.ok) {
+      throw new Error(raw_response.status);
+    }
+    const json_data = await raw_response.json();
+    console.log(json_data);
+    return json_data;
+  }catch(error){
+    console.log(error);
+    return null;
+  }
 }
 
 main();
