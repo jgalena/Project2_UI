@@ -8,12 +8,15 @@
 
     <!-- for working with registration.js -->
     <script type="text/javascript" src="../js/login.js"></script>
+    <link rel="stylesheet" href="/css/index.css">
 
 </head>
 
 <body>
     <nav class="navbar navbar-light navbar-expand-lg fixed-top bg-white clean-navbar">
-        <div class="container"><a class="navbar-brand logo" href="#">Team Alchemy</a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-1"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+        <div class="container"><a class="navbar-brand logo" href="#">Team Alchemy</a><button data-bs-toggle="collapse"
+                class="navbar-toggler" data-bs-target="#navcol-1"><span class="visually-hidden">Toggle
+                    navigation</span><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse" id="navcol-1">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item"><a class="nav-link" href="/html/userRegistration.html">Registration</a></li>
@@ -27,43 +30,47 @@
     <main class="page registration-page">
         <section class="clean-block clean-form dark">
             <div class="container">
-                <div class="block-heading">
-                    <h2 class="text-info" style="/*border-color: #1DB954;*//*--bs-primary-rgb: 29,185,84;*//*--bs-secondary-rgb: 29,185,84;*//*--bs-success-rgb: 29,185,84;*/--bs-info-rgb: 29,185,84;/*--bs-warning-rgb: 29,185,84;*//*--bs-danger-rgb: 29,185,84;*//*--bs-light-rgb: 29,185,84;*//*--bs-dark: #1DB954;*/">User Login</h2>
-                </div>
 
-                <form method="GET" class="login-form" id="login-form" style="border-top: 2px solid #1DB954;">
 
-                    <!-- get username -->
-                    <div class="mb-3">
-                        <input type="text" placeholder="Enter your username..." id="username" class="mt-3" >
-                    </div>
-                
-                    <!-- get password -->
-                    <div class="mb-3">
-                        <input type="text" placeholder="Enter your password..." id="password" class="mt-3" >
+
+                <div id="loginFields">
+                    <div id="userLoginHeading">
+                        <h2 id="textHeading">User Login </h2>
                     </div>
 
-                  
+                    <form method="GET">
 
-                    <!-- Register Button -->
-                    <button type="button" onclick="validate();">Login</button>
-                    
-                </form>
+                        <!-- get username -->
+                        <div id="usernameInput">
+                            <input type="text" placeholder="Enter your username..." id="username" class="mt-3">
+                        </div>
 
+                        <!-- get password -->
+                        <div id="passwordInput">
+                            <input type="text" placeholder="Enter your password..." id="password" class="mt-3">
+                        </div>
 
+                        <!-- Register Button -->
+                        <div id="loginButtonSpacing">
+                            <button type="button" id="loginButton" onclick="validate();">Login</button>
+                        </div>
 
-
+                    </form>
                 </div>
-            </section>
-        </main>
-        <div style="position: fixed;left: 0px;bottom: 0px;/*height: 30px;*/width: 100%;">
-            <footer class="page-footer dark">
-                <div class="footer-copyright">
-                    <p>© 2022 Copyright Team Alchemy</p>
-                </div>
-            </footer>
-            
-        </div>
-    </body>
+
+
+
+            </div>
+        </section>
+    </main>
+    <div style="position: fixed;left: 0px;bottom: 0px;/*height: 30px;*/width: 100%;">
+        <footer class="page-footer dark">
+            <div class="footer-copyright">
+                <p>© 2022 Copyright Team Alchemy</p>
+            </div>
+        </footer>
+
+    </div>
+</body>
+
 </html>
-
