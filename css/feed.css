@@ -1,0 +1,90 @@
+.makePost {
+	width: 400px;
+	height: 150px;
+
+    background-color: #1db954;
+    background-image: linear-gradient(156deg, #1db954 0%, #157d39 10%, #161616 100%);
+    
+    border: 1px;
+    border-color: #00531d;
+    border-style: solid;
+    border-radius: 12px;
+
+
+    padding: 20px
+
+   }
+
+
+
+#makePostButton {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    border-color: transparent;
+
+	width: 115px;
+	height: 10px;
+    
+    border: 1px;
+    color:#ffffff;
+    border-color: #000000;
+    border-style: solid;
+    border-radius: 12px;
+
+    background-color: #2d2d2d;
+    background-image: linear-gradient(180deg, #2d2d2d 40%, #222222 100%);
+    padding: 12px
+}
+
+#postBox{
+
+	width: 90%;
+	height: 90%;
+    resize:none;
+
+    border: 1px;
+    border-color: #000000;
+    border-style: solid;
+    border-radius: 12px;
+
+    background-color: #2d2d2d;
+    background-image: linear-gradient(180deg, #2d2d2d 40%, #222222 100%);
+    padding: 20px;
+
+    font-size: 15px;
+
+}
+
+
+#postSong{
+	width: 90%;
+	height: 0px;
+    resize:none;
+
+    border: 1px;
+    border-color: #000000;
+    border-style: solid;
+    border-radius: 12px;
+
+    background-color: #2d2d2d;
+    background-image: linear-gradient(180deg, #2d2d2d 40%, #222222 100%);
+  
+    padding: 20px;
+
+    font-size: 15px;
+    color: #ffffff;
+    
+}
+
+
+::placeholder {
+    color: #ffffff;
+  }
+
+
+body {
+    background-color: #1db954;
+    background-image: linear-gradient(156deg, #1db954 0%, #157d39 10%, #161616 100%);
+}
+
