@@ -1,23 +1,20 @@
-.makePost {
-	width: 400px;
-	height: 150px;
+#loginFields {
+    margin: auto;
+    width: 50%;
 
     background-color: #1db954;
-    background-image: linear-gradient(156deg, #1db954 0%, #157d39 10%, #161616 100%);
+    background-image: linear-gradient(156deg, #157d39 0%, #157d39 50%, #0c5024 100%);
     
     border: 1px;
     border-color: #00531d;
     border-style: solid;
     border-radius: 12px;
 
-
     padding: 20px
-
    }
 
 
-
-#makePostButton {
+#loginButton {
     display: inline-flex;
     justify-content: center;
     align-items: center;
@@ -37,29 +34,15 @@
     padding: 12px
 }
 
-#postBox{
 
-	width: 90%;
-	height: 90%;
-    resize:none;
-
-    border: 1px;
-    border-color: #000000;
-    border-style: solid;
-    border-radius: 12px;
-
-    background-color: #2d2d2d;
-    background-image: linear-gradient(180deg, #2d2d2d 40%, #222222 100%);
-    padding: 20px;
-
-    font-size: 15px;
-
+#usernameInput{
+    padding: 4px;
 }
 
 
-#postSong{
-	width: 90%;
-	height: 0px;
+#username{
+    margin: auto;
+    width: 90%;
     resize:none;
 
     border: 1px;
@@ -69,12 +52,32 @@
 
     background-color: #2d2d2d;
     background-image: linear-gradient(180deg, #2d2d2d 40%, #222222 100%);
-  
     padding: 20px;
 
     font-size: 15px;
-    color: #ffffff;
-    
+}
+
+
+#passwordInput{
+    padding: 4px;
+}
+
+
+#password{
+    margin: auto;
+    width: 90%;
+    resize:none;
+
+    border: 1px;
+    border-color: #000000;
+    border-style: solid;
+    border-radius: 12px;
+
+    background-color: #2d2d2d;
+    background-image: linear-gradient(180deg, #2d2d2d 40%, #222222 100%);
+    padding: 20px;
+
+    font-size: 15px;
 }
 
 
@@ -83,8 +86,32 @@
   }
 
 
-body {
+html, body {
     background-color: #1db954;
     background-image: linear-gradient(156deg, #1db954 0%, #157d39 10%, #161616 100%);
+
+    height: 100%;
+    margin: 0;
+    padding: 0;
 }
+
+
+#textHeading{
+    font-size: 45px;
+    text-align: center;
+ 
+    border-radius: 12px;
+    padding: 20px;
+}
+
+
+main {
+    margin: auto;
+    width: 50%;
+    padding: 10px;
+  }
+
+
+
+
 
