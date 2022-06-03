@@ -1,0 +1,33 @@
+body{
+    background-color: #1db954;
+    background-image: linear-gradient(156deg, #1db954 0%, #157d39 10%, #161616 100%);
+    color: white;
+    font-family: 'proxima-nova', sans-serif;
+    
+}
+
+img{
+    width: 300px;
+    height: 300px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 100%;
+   
+}
+
+.profile{
+    display: flex;
+    align-items: center;
+}
+
+#username{
+    font-size: 100px;
+}
+
+#favs{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    
+    
+}
