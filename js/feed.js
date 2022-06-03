@@ -68,12 +68,70 @@ async function getComments() {
   }
 }
 
+async function getPost(postId) {
+  try {
+    const raw_response = await fetch(
+      `http://localhost:8080/api/post?post_id=${postId}`,
+      {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+          "Access-Control-Allow-Origin": "*"
+        }
+      }
+    );
+
+    if (!raw_response.ok) {
+      throw new Error(raw_response.status);
+    }
+
+    const json_data = await raw_response.json();
+
+    return json_data;
+
+  } catch (error) {
+    console.log(error);
+    return null;
+  }
+}
+
+async function addComment(comment) {
+  try {
+    console.log("AAAAAAAAAAAAAAA", comment);
+    const raw_response = await fetch(
+      `http://localhost:8080/api/comment`,
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "Access-Control-Allow-Origin": "*"
+        },
+        body: JSON.stringify(comment)
+      }
+    );
+
+    if (!raw_response.ok) {
+      throw new Error(raw_response.status);
+    }
+
+    const json_data = await raw_response.json();
+
+    return json_data;
+
+  } catch (error) {
+    console.log(error);
+    return null;
+  }
+}
+
 async function displayPosts(posts) {
   var parentSection = document.getElementById("posts");
   var comments = await getComments();
 
   for (let i = 0; i < posts.length; i++) {
     var postDiv = document.createElement("div");
+    postDiv.setAttribute('id', posts[i].post_id);
+    postDiv.setAttribute('class', "is-post");
 
     var postUser = document.createElement("h3");
     postUser.innerHTML = posts[i].user ? posts[i].user.username : `User is unknown`;
@@ -90,6 +148,19 @@ async function displayPosts(posts) {
     var commentBox = document.createElement("textarea");
     var createCommentDiv = document.createElement("div");
     var submitComment = document.createElement("button");
+
+    submitComment.onclick = async function (event) {
+      let user = JSON.parse(sessionStorage.getItem('currentUser'));
+      let post = await getPost(event.target.parentElement.parentElement.id)
+      let body = event.target.parentElement.firstChild.value;
+      const comment = {
+        comment_body: body,
+        post: post,
+        user: user
+      };
+      addComment(comment);
+    }
+
     submitComment.innerHTML = "Comment";
     createCommentDiv.append(commentBox);
     createCommentDiv.append(submitComment);
