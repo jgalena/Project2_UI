@@ -1,5 +1,3 @@
-
-
 async function makePost(post) {
   console.log(`adding post to api: ${JSON.stringify(post)}`);
   //do fetch request here
@@ -25,8 +23,6 @@ async function makePost(post) {
 
     console.log(json_data);
 
-    // getPosts()
-
     return json_data;
 
   } catch (error) {
@@ -36,21 +32,29 @@ async function makePost(post) {
   }
 }
 
+async function addSongToPost() {
 
-function makePostHelper() {
-  /**
-   * This function acts as an intermediary between 
-   *      the html post input and the makePost function.
-   *      It takes the input and combines it into a 
-   *      single object that can be passed to the makePost function.
-   */
+  // gets post body from input on post
+  let postBody = document.getElementById("postBox").value;
+  console.log(postBody);
 
-  // Selecting the input elements and their values from html page
-  var PostBody = document.getElementById("postBox").value;
+  // gets song name from input on post
+  let songName = document.getElementById("postSong").value;
+  console.log(songName);
+
+  // get current user info
+  let user = JSON.parse(sessionStorage.getItem('currentUser'));
+  console.log(user);
+
+  // search spotify for song and get url
+  let songURL = await searchSongSpotify(songName);
+  console.log(songURL);
 
   // combine inputs into single object
   const post = {
-    post_body: PostBody,
+    post_body: postBody,
+    post_song: songURL,
+    user: user
   };
 
   // test print to console
@@ -59,4 +63,36 @@ function makePostHelper() {
   // pass input object into makePost
   makePost(post)
 
+}
+
+async function searchSongSpotify(songName) {
+  try {
+    const raw_response = await fetch(
+      `https://v1.nocodeapi.com/jgalena/spotify/mMIVCyyptpyfkswF/search?q=${songName}&type=track`,
+    );
+
+    if (!raw_response.ok) {
+      throw new Error(raw_response.status);
+    }
+    const json_data = await raw_response.json();
+    let song = {
+      "id": 0,
+      "name": json_data.tracks.items[0].name,
+      "artist": json_data.tracks.items[0].artists[0].name,
+      "album": json_data.tracks.items[0].album.name,
+      "art": json_data.tracks.items[0].album.images[0].url,
+      "length": json_data.tracks.items[0].duration_ms,
+      "url": json_data.tracks.items[0].id
+    }
+
+    console.log(song);
+
+    return song.url;
+
+  } catch (error) {
+    //this catch block is for network errors
+    console.log(error);
+
+    return null;
+  }
 }
