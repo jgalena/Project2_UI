@@ -130,6 +130,7 @@ async function displayPosts(posts) {
 
   for (let i = 0; i < posts.length; i++) {
     var postDiv = document.createElement("div");
+    
     postDiv.setAttribute('id', posts[i].post_id);
     postDiv.setAttribute('class', "is-post");
 
@@ -148,6 +149,8 @@ async function displayPosts(posts) {
     var commentBox = document.createElement("textarea");
     var createCommentDiv = document.createElement("div");
     var submitComment = document.createElement("button");
+    createCommentDiv.setAttribute('id', "comment-div");
+    
 
     submitComment.onclick = async function (event) {
       let user = JSON.parse(sessionStorage.getItem('currentUser'));
@@ -159,6 +162,8 @@ async function displayPosts(posts) {
         user: user
       };
       addComment(comment);
+
+
     }
 
     submitComment.innerHTML = "Comment";
@@ -169,12 +174,21 @@ async function displayPosts(posts) {
     for (let j = 0; j < comments.length; j++) {
       if (posts[i].post_id == comments[j].post.post_id) {
         var commentDiv = document.createElement("div");
+        commentDiv.setAttribute('id', "is-comment");
         commentDiv.innerHTML = comments[j].comment_body;
         postDiv.append(commentDiv);
       }
     }
 
+    // adds spacing between posts 
+    var br = document.createElement("br");
+    br.setAttribute('id', "post-spacing");
+
     parentSection.prepend(postDiv);
+    parentSection.prepend(br);
+
+
+
   }
 }
 
