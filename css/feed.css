@@ -1,21 +1,25 @@
-.makePost {
-	width: 400px;
-	height: 150px;
+#postBounds {
+    align-content: center;
+    padding-left: 20%;
+    padding-right: 43%;
+    padding-top: 1%;
+    padding-bottom: 0%;
+}
 
-    background-color: #1db954;
-    background-image: linear-gradient(156deg, #1db954 0%, #157d39 10%, #161616 100%);
-    
+#postBoundsPadding {
+    align-content: center;
+    padding-left: 2%;
+    padding-right: 43%;
+    padding-top: 2.2%;
+    padding-bottom: 1.5%;
+
     border: 1px;
-    border-color: #00531d;
+    border-color: #000000;
     border-style: solid;
     border-radius: 12px;
 
-
-    padding: 20px
-
-   }
-
-
+    background-color: #353535;
+}
 
 #makePostButton {
     display: inline-flex;
@@ -37,11 +41,18 @@
     padding: 12px
 }
 
+#makePostButtonPadding {
+    padding: 5px;
+    padding-left: 0%;
+}
+
 #postBox{
 
 	width: 90%;
 	height: 90%;
     resize:none;
+
+    color:#ffffff;
 
     border: 1px;
     border-color: #000000;
@@ -55,7 +66,6 @@
     font-size: 15px;
 
 }
-
 
 #postSong{
 	width: 90%;
@@ -77,7 +87,6 @@
     
 }
 
-
 ::placeholder {
     color: #ffffff;
   }
@@ -88,3 +97,128 @@ body {
     background-image: linear-gradient(156deg, #1db954 0%, #157d39 10%, #161616 100%);
 }
 
+/* temp post styling below this line */
+.is-post{
+
+    border: 1px;
+    border-color: #000000;
+    border-style: solid;
+    border-radius: 12px;
+
+    background-color: #353535;
+    padding-left: 15%;
+    padding-right: 15%;
+    padding-bottom: 1%;
+
+    font-size: 20px;
+
+}
+
+.posts{
+    align-content: center;
+    padding-left: 20%;
+    padding-right: 20%;
+    padding-top: 1%;
+    padding-bottom: 5%;
+}
+
+#comment-div{
+	width: 55%;
+    resize:none;
+
+    border-radius: 12px;
+
+    font-size: 15px;
+}
+
+#comment-div button {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    border-color: transparent;
+
+	width: 115px;
+	height: 10px;
+    
+    border: 1px;
+    color:#ffffff;
+    border-color: #000000;
+    border-style: solid;
+    border-radius: 12px;
+
+    background-color: #2d2d2d;
+    background-image: linear-gradient(180deg, #2d2d2d 40%, #222222 100%);
+    padding: 12px
+}
+
+#comment-div textarea {
+	width: 90%;
+	height: 90%;
+    resize:none;
+
+    color:#ffffff;
+
+    border: 1px;
+    border-color: #000000;
+    border-style: solid;
+    border-radius: 12px;
+
+    background-color: #2d2d2d;
+    background-image: linear-gradient(180deg, #2d2d2d 40%, #222222 100%);
+    padding: 10px;
+
+    font-size: 15px;
+}
+
+h3{
+    padding-left: 0%;
+    padding-top: 0%;
+    padding-bottom: 1%;
+    color: rgb(255, 255, 255);
+    font-size: 24px;
+    
+}
+
+/* post body */
+p:first-of-type{
+    color: rgb(255, 255, 255);
+    font-size: 20px;
+
+    padding-left: 1%;
+    padding-right: 1%;
+    padding-top: 2%;
+    padding-bottom: 2%;
+
+    border: 1px;
+    border-color: #000000;
+    border-style: solid;
+    border-radius: 12px;
+
+    margin-right: 0%;
+
+}
+
+/* spotify embed */
+iframe {
+    width: 100%;
+}
+
+#is-comment{
+
+    color: rgb(255, 255, 255);
+    font-size: 18px;
+
+    padding-left: 1%;
+    padding-right: 10%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+
+    border: 1px;
+    border-color: #000000;
+    border-style: solid;
+    border-radius: 12px;
+    
+    margin-top: 1%;
+    margin-bottom: 1%;
+    margin-right: 48.5%;
+}
