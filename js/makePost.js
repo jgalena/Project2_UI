@@ -63,6 +63,8 @@ async function addSongToPost() {
   // pass input object into makePost
   makePost(post)
 
+  window.location.reload();
+
 }
 
 async function searchSongSpotify(songName) {
