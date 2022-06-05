@@ -22,9 +22,9 @@ async function makePost(post) {
     const json_data = await raw_response.json();
 
     console.log(json_data);
-
+    window.location.reload();
     return json_data;
-
+    
   } catch (error) {
     //this catch block is for network errors
     console.log(error);
@@ -66,6 +66,7 @@ async function addSongToPost() {
 }
 
 async function searchSongSpotify(songName) {
+  // this function searches spotify and returns song url
   try {
     const raw_response = await fetch(
       `https://v1.nocodeapi.com/jgalena/spotify/mMIVCyyptpyfkswF/search?q=${songName}&type=track`,
