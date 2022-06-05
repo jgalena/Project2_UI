@@ -18,17 +18,19 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-light navbar-expand-lg fixed-top bg-white clean-navbar">
-            <div class="collapse navbar-collapse" id="navcol-1">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="/html/userRegistration.html">Registration</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/index.html">Login</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/html/feed.html">Feed</a></li>
-                    <li class="nav-item"><a class="nav-link active" href="/html/profile.html">Profile</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+
+    <div class="topnav" id="myTopnav">
+        <nav class="nav_bar">
+
+            <ul>
+                <a class="nav-link active" href="/html/feed.html">Feed</a>
+                <a class="nav-link " href="/html/profile.html">Profile</a>
+                <a class="nav-link" id="logout" href="/index.html">Logout</a>
+            </ul>
+
+        </nav>
+    </div>
+
     <main class="feed">
         <div class="top-bar">
             <h1>
@@ -36,76 +38,77 @@
             </h1>
         </div>
 
-            <!-- make a post -->
-      
-                <div id="postBounds">
-                    <div id="postBoundsPadding">
+        <!-- make a post -->
 
-                        <div>
-                            <textarea id="postBox" placeholder="Make new post..." name="postBox"></textarea>
-                        </div>
+        <div id="postBounds">
+            <div id="postBoundsPadding">
 
-                        <div>
-                            <form>
-                                <input type="text" placeholder="Enter name of song to post..." id="postSong">
-                            </form>
-                        </div>
-
-                        <div id="makePostButtonPadding">
-                            <button type="button" id="makePostButton" onclick="addSongToPost();">Create Post</button>
-                        </div>
-                    </div>
-
+                <div>
+                    <textarea id="postBox" placeholder="Make new post..." name="postBox"></textarea>
                 </div>
-                        
+
+                <div>
+                    <form>
+                        <input type="text" placeholder="Enter name of song to post..." id="postSong">
+                    </form>
+                </div>
+
+                <div id="makePostButtonPadding">
+                    <button type="button" id="makePostButton" onclick="addSongToPost();">Create Post</button>
+                </div>
+            </div>
+
+        </div>
 
 
 
 
-            <!-- need all posts displayed here -->
-            <section id="posts" class="posts">
-                
 
-                <!-- add comment button -->
+        <!-- need all posts displayed here -->
+        <section id="posts" class="posts">
 
 
-            </section>
-
-            <!-- need comments to show in extended down when clicked -->
-            <section class="extendComments">
-                
-
-            </section>
+            <!-- add comment button -->
 
 
+        </section>
+
+        <!-- need comments to show in extended down when clicked -->
+        <section class="extendComments">
 
 
-            <!-- need to count comments -->
-            <section class="countPosts">
-                
-
-            </section>
+        </section>
 
 
 
 
-            <!-- need to add likes -->
-            <section class="likePosts">
-                
-
-            </section>
+        <!-- need to count comments -->
+        <section class="countPosts">
 
 
+        </section>
 
 
-            <!-- need to count likes -->
-            <section class="likePosts">
 
-            </section>
-      
+
+        <!-- need to add likes -->
+        <section class="likePosts">
+
+
+        </section>
+
+
+
+
+        <!-- need to count likes -->
+        <section class="likePosts">
+
+        </section>
+
         </section>
     </main>
 
 
 </body>
+
 </html>
