@@ -8,30 +8,38 @@
 
     <!-- for working with registration.js -->
     <script type="text/javascript" src="../js/userRegistration.js"></script>
+    <link rel="stylesheet" href="/css/userRegistration.css">
+
 
 </head>
 
 <body>
-    <nav class="navbar navbar-light navbar-expand-lg fixed-top bg-white clean-navbar">
-        <div class="container"><a class="navbar-brand logo" href="#">Team Alchemy</a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-1"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
-            <div class="collapse navbar-collapse" id="navcol-1">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="/html/userRegistration.html">Registration</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/index.html">Login</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/html/feed.html">Feed</a></li>
-                    <li class="nav-item"><a class="nav-link active" href="/html/profile.html">Profile</a></li>
+    <div class="topnav" id="myTopnav">
+    <nav class="nav_bar">
+       
+                <ul>
+                    <a class="nav-link active" href="/html/userRegistration.html">Registration</a>
+                    <a class="nav-link" href="/index.html">Login</a>
+                    <a class="nav-link" href="/html/feed.html">Feed</a>
+                    <a class="nav-link " href="/html/profile.html">Profile</a>
                 </ul>
-            </div>
-        </div>
+           
     </nav>
-    <main class="page registration-page">
-        <section class="clean-block clean-form dark">
-            <div class="container">
-                <div class="block-heading">
-                    <h2 class="text-info" style="/*border-color: #1DB954;*//*--bs-primary-rgb: 29,185,84;*//*--bs-secondary-rgb: 29,185,84;*//*--bs-success-rgb: 29,185,84;*/--bs-info-rgb: 29,185,84;/*--bs-warning-rgb: 29,185,84;*//*--bs-danger-rgb: 29,185,84;*//*--bs-light-rgb: 29,185,84;*//*--bs-dark: #1DB954;*/">User Registration</h2>
-                </div>
+</div>
 
-                <form method="POST" class="register-form" id="register-form" style="border-top: 2px solid #1DB954;">
+
+    <main class="page registration-page">
+        
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-md-5">
+
+                        <div class="card">
+                            <h2 class="card-title text-center">Register</h2>
+                            <div class="card-body py-md-4">
+                        
+
+                <form _lpchecked="1" method="POST" class="register-form" id="register-form" style="border-top: 2px solid #1DB954;">
 
                     <!-- get f_name -->
                     <div class="mb-3">
@@ -57,18 +65,23 @@
                     <div class="mb-3">
                         <input type="text" placeholder="Who is your favorite artist?" id="favorite_artist" class="mt-3" >
                     </div>
-
+                    <div class="registerbtnspace">
                     <!-- Register Button -->
-                    <button type="button" onclick="addUserHelper();">Register</button>
-                    
-                </form>
-
-
-
-
+                    <button type="button" class="registerbtn" onclick="addUserHelper();">Register</button>
                 </div>
-            </section>
+                </form>
+            </div>
+            </div>
+            </div>
+            </div>
+        </div>
+            
         </main>
+
+
+
+
+        
         <div style="position: fixed;left: 0px;bottom: 0px;/*height: 30px;*/width: 100%;">
             <footer class="page-footer dark">
                 <div class="footer-copyright">

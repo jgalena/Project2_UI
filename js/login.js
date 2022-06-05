@@ -36,9 +36,8 @@ async function validate() {
     var username = document.getElementById("username").value;
     var password = document.getElementById("password").value;
     const user = await login(username, password);
-    sessionStorage.setItem('currentUser', JSON.stringify(user));
-    let test = sessionStorage.getItem('currentUser');
-    console.log(test);
+    sessionStorage.setItem('currentUser',  JSON.stringify(user));
+    console.log(user);
     if (user != null ) {
 
         alert("Login successfully");
