@@ -209,7 +209,7 @@ async function displayFavs(favs) {
       //postBody.innerHTML = song.name + " by " + song.artist + " From the album " + song.album;
       postBody.innerHTML = "<iframe style=\"border-radius:12px\" src=\"https://open.spotify.com/embed/track/" 
       + favs[i].spotifyId 
-      + "?utm_source=generator\" width=\"300\" height=\"80\" frameBorder=\"0\" allowfullscreen=\"\" allow=\"autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture\"></iframe>"
+      + "?utm_source=generator\" width=\"60%\" height=\"80\" frameBorder=\"0\" allowfullscreen=\"\" allow=\"autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture\"></iframe>"
       + "<button type = \"button\" onclick=\"deleteSongHelper('" + favs[i].id + "');\">X</button>";
       console.log(favs[i]);
       postDiv.append(postBody);
@@ -225,8 +225,8 @@ async function main(){
     const artist_URL = await searchArtistSpotify(user.favorite_artist);
     document.getElementById("username").innerHTML = user.username;
     document.getElementById("name").innerHTML =  user.f_name + " " + user.l_name ;
-    
-    document.getElementById("fav_artist_playlist").innerHTML = "<iframe style=\"border-radius:12px\" src=\"https://open.spotify.com/embed/artist/" + artist_URL + "?utm_source=generator\" width=\"300\" height=\"80\" frameBorder=\"0\" allowfullscreen=\"\" allow=\"autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture\"></iframe>"
+    document.getElementById("fav_art").innerHTML = "My favorite artist is  " + user.favorite_artist;
+    document.getElementById("fav_artist_playlist").innerHTML = "<iframe style=\"border-radius:12px\" src=\"https://open.spotify.com/embed/artist/" + artist_URL + "?utm_source=generator\" width=\"60%\" height=\"80\" frameBorder=\"0\" allowfullscreen=\"\" allow=\"autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture\"></iframe>"
     displayFavs(favorites);
     
 }
