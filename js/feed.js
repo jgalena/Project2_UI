@@ -17,10 +17,8 @@ async function getPosts() {
 
     const json_data = await raw_response.json();
 
-    console.log(`POST ID: ${json_data[0].post_id}`);
     //console.log(json_data);
 
-    console.log(typeof json_data);
     displayPosts(json_data);
 
   } catch (error) {
@@ -194,9 +192,11 @@ async function displayPosts(posts) {
     likeComment.onclick = async function (event) {
       let post = await getPost(event.target.parentElement.parentElement.id)
       post.post_likes++;
-      updatePost(post);
-      var updatedLikes = document.getElementById("likes-" + post.post_id);
-      updatedLikes.innerHTML++;
+      let responseStatus = await updatePost(post);
+      if (responseStatus.message == "UPDATE SUCCESSFUL") {
+        var updatedLikes = document.getElementById("likes-" + post.post_id);
+        updatedLikes.innerHTML++;
+      }
     }
 
     submitComment.innerHTML = "Comment";
