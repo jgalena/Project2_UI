@@ -45,6 +45,8 @@ button {
 
     background-color: #2d2d2d;
     padding: 12px;
+
+    margin-right: 3%;
 }
 
 button:hover {
@@ -54,15 +56,49 @@ button:hover {
     cursor: pointer;
 }
 
+
 button:active {
     transform: translateY(4px);
 }
+
+
+button #like-button {
+    border: 1px;
+    color:#ffffff;
+    border-color: #000000;
+    border-style: solid;
+    border-radius: 12px;
+    
+
+    background-color: #2d2d2d;
+}
+
+button #like-button {
+    background-color:#1db954;
+    transition: 0.2s;
+    color:#000000;
+    cursor: pointer;
+}
+
+button #like-button{
+    transform: translateY(4px);
+}
+
+.likes-value {
+    font-weight: bolder;
+    color:#0fa544;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;}
+
+
+
+
 
 
 #makePostButtonPadding {
     padding: 5px;
     padding-left: 0%;
 }
+
 
 #postBox{
 
@@ -82,8 +118,8 @@ button:active {
     padding: 20px;
 
     font-size: 15px;
-
 }
+
 
 #postSong{
 	width: 90%;

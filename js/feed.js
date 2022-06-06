@@ -161,9 +161,17 @@ async function displayPosts(posts) {
     var commentBox = document.createElement("textarea");
     var createCommentDiv = document.createElement("div");
     var submitComment = document.createElement("button");
+
+    // like button
     var likeComment = document.createElement("button");
+
+
     let likesValue = document.createElement("span");
+
+
     likeComment.setAttribute('id', "like-button");
+
+
     likesValue.setAttribute('class', "likes-value");
     likesValue.setAttribute('id', "likes-" + posts[i].post_id);
     createCommentDiv.setAttribute('id', "comment-div");
