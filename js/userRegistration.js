@@ -23,6 +23,9 @@ async function addUser(user){
     
         console.log(json_data);
 
+        // call login page
+        window.location.href = "/index.html";
+
         return json_data;
       } catch (error) {
         //this catch block is for network errors
@@ -61,5 +64,5 @@ function addUserHelper(){
 
     // pass input object into addUser
     addUser(user)
-
 }
+
