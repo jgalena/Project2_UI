@@ -31,7 +31,6 @@ body {
 }
 
 button {
-    
     align-items: center;
     justify-content: center;
     display: inline-flex;
@@ -45,9 +44,7 @@ button {
     border-radius: 12px;
 
     background-color: #2d2d2d;
-
     padding: 12px;
-
 }
 
 button:hover {
@@ -258,8 +255,6 @@ font-size: 17px;
     padding-top: 0%;
     padding-bottom: 0%;
 }
-
-
 
 
 /* Change the color of links on hover */
