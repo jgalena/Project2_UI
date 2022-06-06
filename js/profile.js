@@ -240,7 +240,8 @@ async function addSongHelper(){
         user: user
     }
     console.log(favoriteSong);
-    addFavSong(favoriteSong);
+    await addFavSong(favoriteSong);
+ 
     window.location.reload();
 
 
@@ -250,7 +251,7 @@ async function deleteSongHelper(input){
   let song = {
     id: input
   }
-  deleteSong(song);
+  await deleteSong(song);
   window.location.reload();
 }
 
