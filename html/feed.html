@@ -18,102 +18,99 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-light navbar-expand-lg fixed-top bg-white clean-navbar">
-        <div class="container"><a class="navbar-brand logo" href="#">Team Alchemy</a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-1"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
-            <div class="collapse navbar-collapse" id="navcol-1">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="/html/userRegistration.html">Registration</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/index.html">Login</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/html/feed.html">Feed</a></li>
-                    <li class="nav-item"><a class="nav-link active" href="/html/profile.html">Profile</a></li>
-                </ul>
+
+    <div class="topnav" id="myTopnav">
+        <nav class="nav_bar">
+
+            <ul>
+                <a class="nav-link active" href="/html/feed.html">Feed</a>
+                <a class="nav-link " href="/html/profile.html">Profile</a>
+                <a class="nav-link" id="logout" href="/index.html">Logout</a>
+            </ul>
+
+            <div id="logo">
+                <h1>
+                    <img src="../imgs/logo.png" alt="Team Logo" height="48">
+                </h1>
             </div>
-        </div>
-    </nav>
-    <main class="feed">
-        <div class="top-bar">
-            <h1>
-                Tweeter
-            </h1>
-        </div>
 
-            <!-- make a post -->
-            <section class="makePost">
-                <div>
-
-                    <div class="postBox">
-                        <textarea id="postBox" placeholder="Make new post..." name="postBox"></textarea>
-                    </div>
-
-                    <div class="container">
-                        <form>
-                            <div class="mb-3">
-                                <input type="text" placeholder="Enter name of song to post..." id="postSong" class="mt-3" >
-                            </div>
-                            <br>
-                        </form>
-                    </div>
-
-                        <button type="button" id="makePostButton" onclick="addSongToPost();">Create Post</button>
-
-                </div>
-                        
-
-
-            </section>
-
-
-
-            <!-- need all posts displayed here -->
-            <section id="posts" class="posts">
-                
-
-                <!-- add comment button -->
-
-
-            </section>
-
-            <!-- need comments to show in extended down when clicked -->
-            <section class="extendComments">
-                
-
-            </section>
-
-
-
-
-            <!-- need to count comments -->
-            <section class="countPosts">
-                
-
-            </section>
-
-
-
-
-            <!-- need to add likes -->
-            <section class="likePosts">
-                
-
-            </section>
-
-
-
-
-            <!-- need to count likes -->
-            <section class="likePosts">
-
-            </section>
-      
-        </section>
-    </main>
-    <div style="position: fixed;left: 0px;bottom: 0px;/*height: 30px;*/width: 100%;">
-        <footer class="page-footer dark">
-            <div class="footer-copyright">
-                <p>© 2022 Copyright Team Alchemy</p>
-            </div>
-        </footer>
+        </nav>
     </div>
 
+    <main class="feed">
+
+
+        <!-- make a post -->
+
+        <div id="postBounds">
+            <div id="postBoundsPadding">
+
+                <div>
+                    <textarea id="postBox" placeholder="Make new post..." name="postBox"></textarea>
+                </div>
+
+                <div>
+                    <form>
+                        <input type="text" placeholder="Enter name of song to post..." id="postSong">
+                    </form>
+                </div>
+
+                <div id="makePostButtonPadding">
+                    <button type="button" id="makePostButton" onclick="addSongToPost();">Create Post</button>
+                </div>
+            </div>
+
+        </div>
+
+
+
+
+
+        <!-- need all posts displayed here -->
+        <section id="posts" class="posts">
+
+
+            <!-- add comment button -->
+
+
+        </section>
+
+        <!-- need comments to show in extended down when clicked -->
+        <section class="extendComments">
+
+
+        </section>
+
+
+
+
+        <!-- need to count comments -->
+        <section class="countPosts">
+
+
+        </section>
+
+
+
+
+        <!-- need to add likes -->
+        <section class="likePosts">
+
+
+        </section>
+
+
+
+
+        <!-- need to count likes -->
+        <section class="likePosts">
+
+        </section>
+
+        </section>
+    </main>
+
+
 </body>
+
 </html>
