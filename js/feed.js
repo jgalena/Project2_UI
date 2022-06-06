@@ -17,18 +17,6 @@ async function getPosts() {
 
     const json_data = await raw_response.json();
 
-    // post_id = json_data[0].post_id;
-    // post_body = json_data[0].post_body;
-    // post_likes = json_data[0].post_likes; 
-    // user = json_data[0].user;
-    // song = json_data[0].song;
-
-    // console.log("post_id: ", post_id);
-    // console.log("post_body: ", post_body);
-    // console.log("post_likes: ", post_likes);
-    // console.log("user: ", user);
-    // console.log("song: ", song);
-
     console.log(`POST ID: ${json_data[0].post_id}`);
     //console.log(json_data);
 
@@ -97,7 +85,6 @@ async function getPost(postId) {
 
 async function addComment(comment) {
   try {
-    console.log("AAAAAAAAAAAAAAA", comment);
     const raw_response = await fetch(
       `http://localhost:8080/api/comment`,
       {
@@ -115,7 +102,34 @@ async function addComment(comment) {
     }
 
     const json_data = await raw_response.json();
+    return json_data;
 
+  } catch (error) {
+    console.log(error);
+    return null;
+  }
+}
+
+async function updatePost(post) {
+  try {
+    console.log("Updating Post");
+    const raw_response = await fetch(
+      `http://localhost:8080/api/post`,
+      {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+          "Access-Control-Allow-Origin": "*"
+        },
+        body: JSON.stringify(post)
+      }
+    );
+
+    if (!raw_response.ok) {
+      throw new Error(raw_response.status);
+    }
+
+    const json_data = await raw_response.json();
     return json_data;
 
   } catch (error) {
@@ -130,7 +144,7 @@ async function displayPosts(posts) {
 
   for (let i = 0; i < posts.length; i++) {
     var postDiv = document.createElement("div");
-    
+
     postDiv.setAttribute('id', posts[i].post_id);
     postDiv.setAttribute('class', "is-post");
 
@@ -149,26 +163,48 @@ async function displayPosts(posts) {
     var commentBox = document.createElement("textarea");
     var createCommentDiv = document.createElement("div");
     var submitComment = document.createElement("button");
+    var likeComment = document.createElement("button");
+    let likesValue = document.createElement("span");
+    likesValue.setAttribute('class', "likes-value");
+    likesValue.setAttribute('id', "likes-" + posts[i].post_id);
     createCommentDiv.setAttribute('id', "comment-div");
-    
 
     submitComment.onclick = async function (event) {
-      let user = JSON.parse(sessionStorage.getItem('currentUser'));
-      let post = await getPost(event.target.parentElement.parentElement.id)
       let body = event.target.parentElement.firstChild.value;
-      const comment = {
-        comment_body: body,
-        post: post,
-        user: user
-      };
-      addComment(comment);
+      if (body) {
+        let user = JSON.parse(sessionStorage.getItem('currentUser'));
+        let post = await getPost(event.target.parentElement.parentElement.id)
+        const comment = {
+          comment_body: body,
+          post: post,
+          user: user
+        };
+        let responseStatus = await addComment(comment);
+        if (responseStatus.message == "REGISTATION SUCCESSFUL") {
+          var postDiv = document.getElementById(post.post_id);
+          var commentDiv = document.createElement("div");
+          commentDiv.setAttribute('id', "is-comment");
+          commentDiv.innerHTML = body;
+          postDiv.append(commentDiv);
+        }
+      }
+    }
 
-
+    likeComment.onclick = async function (event) {
+      let post = await getPost(event.target.parentElement.parentElement.id)
+      post.post_likes++;
+      updatePost(post);
+      var updatedLikes = document.getElementById("likes-" + post.post_id);
+      updatedLikes.innerHTML++;
     }
 
     submitComment.innerHTML = "Comment";
+    likeComment.innerHTML = "Like";
+    likesValue.innerHTML = posts[i].post_likes;
     createCommentDiv.append(commentBox);
     createCommentDiv.append(submitComment);
+    createCommentDiv.append(likeComment);
+    createCommentDiv.append(likesValue);
     postDiv.append(createCommentDiv);
 
     for (let j = 0; j < comments.length; j++) {
